@@ -89,7 +89,6 @@ public class EmployeeRepository {
     public void createTable(String keyspace){
         Create createEmployeeTable = SchemaBuilder.createTable(keyspace, TABLE_NAME).ifNotExists()
                 .addPartitionKey(EMPLOYEE_ID, DataType.uuid())
-                //.addClusteringColumn("employee_code", DataType.text())
                 .addColumn(EMPLOYEE_CODE, DataType.text())
                 .addColumn(FIRST_NAME, DataType.text())
                 .addColumn(LAST_NAME, DataType.text());
